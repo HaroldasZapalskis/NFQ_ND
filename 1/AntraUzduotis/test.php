@@ -16,3 +16,5 @@ $c = new ClassC();
 $c->doSomething();
 
 $d = \AntraUzduotis\Subpackage2\ClassD::doSomething();
+
+$e = \AntraUzduotis\Subpackage\Subsubpackage\Subsubsubpackage\ClassE::doSomething();
