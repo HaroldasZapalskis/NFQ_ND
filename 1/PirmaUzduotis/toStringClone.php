@@ -1,6 +1,6 @@
 <?php
 
-class MagicMethods {
+class MagicMethods4 {
     var $firstName = 'Vardas';
     var $lastName = 'Pavarde';
 
@@ -11,7 +11,7 @@ class MagicMethods {
 
     function __toString()
     {
-        return '__toString(): ' .$this->firstName. ' ' .$this->lastName. '' .PHP_EOL. '';
+        return '__toString(): ' .$this->firstName. ' ' .$this->lastName. '' .PHP_EOL;
     }
 
     function __invoke()
@@ -20,12 +20,15 @@ class MagicMethods {
     }
 }
 
-$object = new MagicMethods();
+function run5()
+{
+    $object = new MagicMethods4();
 
 //__toString()
-echo $object;
-$object2 = clone $object;
-echo $object2;
+    echo $object;
+    $object2 = clone $object;
+    echo $object2;
 
 //__invoke()
-echo ''. $object(1) .'';
+    echo '' . $object(1) . '';
+}

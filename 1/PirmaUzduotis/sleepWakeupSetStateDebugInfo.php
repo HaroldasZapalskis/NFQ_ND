@@ -1,6 +1,6 @@
 <?php
 
-class MagicMethods {
+class MagicMethods3{
     var $firstName;
     var $lastName;
 
@@ -11,12 +11,12 @@ class MagicMethods {
 
     function __wakeup()
     {
-        echo "wakeup(): firstName: ".$this->firstName." lastName: ".$this->lastName."".PHP_EOL."";
+        echo "wakeup(): firstName: ".$this->firstName." lastName: ".$this->lastName."".PHP_EOL;
     }
 
     public static function __set_state($an_array)
     {
-        $object = new MagicMethods();
+        $object = new MagicMethods3();
         $object->firstName = $an_array['firstName'];
 
         return $object;
@@ -35,20 +35,22 @@ class Dump {
         ];
     }
 }
-
-$object = new MagicMethods();
-$object->firstName = 'vardas';
-$object->lastName = 'pavarde';
+function run4()
+{
+    $object = new MagicMethods3();
+    $object->firstName = 'vardas';
+    $object->lastName = 'pavarde';
 
 //sleep() wakeup()
-echo "sleep(): ".serialize($object)."".PHP_EOL."";
-unserialize('O:12:"MagicMethods":1:{s:8:"lastName";s:8:"pavardee";}');
+    echo "sleep(): " . serialize($object) . "" . PHP_EOL;
+    unserialize('O:13:"MagicMethods3":1:{s:8:"lastName";s:8:"pavardee";}');
 
 //set_state()
-echo "".PHP_EOL."set_state(): ".PHP_EOL."";
-eval('$object2 = ' . var_export($object, true) . ';');
-var_dump($object2);
+    echo "" . PHP_EOL . "set_state(): " . PHP_EOL;
+    eval('$object2 = ' . var_export($object, true) . ';');
+    var_dump($object2);
 
 //debugInfo()
-echo "".PHP_EOL."debugInfo(): ".PHP_EOL."";
-var_dump(new Dump());
+    echo "" . PHP_EOL . "debugInfo(): " . PHP_EOL;
+    var_dump(new Dump());
+}

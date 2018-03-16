@@ -6,12 +6,12 @@ class MagicMethods {
 
     function __get($name)
     {
-        echo "__get(): Parametro \"$name\" klase neturi" . PHP_EOL . "";
+        echo "__get(): Parametro \"$name\" klase neturi" . PHP_EOL;
     }
 
     function __set($name, $value)
     {
-        echo "__set(): Parametro \"$name\" klase neturi. Bandete priskirti reiksme \"$value\"".PHP_EOL."";
+        echo "__set(): Parametro \"$name\" klase neturi. Bandete priskirti reiksme \"$value\"".PHP_EOL;
     }
 
     function __call($name, $arguments)
@@ -28,17 +28,21 @@ class MagicMethods {
             echo "$item ";
     }
 }
-$object = new MagicMethods();
+
+function run2()
+{
+    $object = new MagicMethods();
 
 //__get()
-echo "$object->nera";
+    echo "$object->nera";
 
 //__set()
-$object->nera = 12;
+    $object->nera = 12;
 
 //__call()
-$object->nera(1, 11, 'abc', true, false);
+    $object->nera(1, 11, 'abc', true, false);
 
 //__callStatic()
-echo "".PHP_EOL."";
-MagicMethods::nera(1, 11);
+    echo "" . PHP_EOL . "";
+    MagicMethods::nera(1, 11);
+}
