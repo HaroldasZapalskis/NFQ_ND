@@ -1,0 +1,10 @@
+p {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+#title {
+    font-family: 'Bad Script';font-size: 30px;
+}
+.something {
+    color: #50eeff;
+    font-family: 'Roboto Mono', monospace;
+}

@@ -1,0 +1,56 @@
+* {
+    border: gray 5px ridge;
+    box-sizing: content-box;
+    padding: 5px 5px 0px 5px;
+    margin:5px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+/* Width, Heigth */
+
+html, body{
+    border-width: 0px;
+    overflow: auto;
+}
+
+body {
+    width: 950px;
+}
+
+header{
+    width:890px;
+    height:85px;
+}
+
+aside{
+    width: 230px;
+    height: 585px;
+    float: left;
+}
+
+main {
+    width: 630px;
+    height: 585px;
+    float:left;
+}
+
+footer{
+    width:890px;
+    height:85px;
+}
+
+.clear{
+    clear:both;
+}
+
+/* Fonts */
+
+
+aside, main {
+    font-family: 'Roboto Mono';
+}
+
+header, footer {
+    font-family: 'Bad Script';
+}
