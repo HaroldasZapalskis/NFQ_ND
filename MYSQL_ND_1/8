@@ -1,0 +1,11 @@
+CREATE TABLE AuthorBook(
+    authorId INT(11),
+    bookId INT(11)
+); 
+
+INSERT INTO `AuthorBook`(`AuthorBook`.`authorId`,`AuthorBook`.`bookId`)
+SELECT `Books`.`authorId`, `Books`.`bookId`
+FROM `Books`;
+
+ALTER TABLE `Books`
+DROP COLUMN `Books`.`authorId`; 
