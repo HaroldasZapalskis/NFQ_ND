@@ -1,0 +1,3 @@
+SELECT `Authors`.`authorId` AS `ID`, `Authors`.`name` COLLATE latin1_general_ci AS `Name` FROM `Authors`
+UNION
+SELECT `Books`.`bookId`, `Books`.`title` FROM `Books`
