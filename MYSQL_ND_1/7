@@ -6,7 +6,7 @@ CREATE TABLE `AuthorBook` (
 
 INSERT INTO `AuthorBook`(`AuthorBook`.`authorId`,`AuthorBook`.`bookId`)
 SELECT `Books`.`authorId`, `Books`.`bookId`
-FROM `Books`
+FROM `Books`;
 
 ALTER TABLE `Books`
 DROP COLUMN `Books`.`authorId`; 
@@ -26,3 +26,4 @@ GROUP BY `Books`.`title`
 
 4.
 ALTER TABLE `Books` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+INSERT INTO `Books` (`title`,`year`) VALUES('Užnugario Šešupės Ūkas','2018')
