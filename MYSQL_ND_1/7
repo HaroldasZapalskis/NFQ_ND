@@ -1,0 +1,28 @@
+1. 
+CREATE TABLE `AuthorBook` (
+    `authorId` INT(11),
+    `bookId` INT(11)
+); 
+
+INSERT INTO `AuthorBook`(`AuthorBook`.`authorId`,`AuthorBook`.`bookId`)
+SELECT `Books`.`authorId`, `Books`.`bookId`
+FROM `Books`
+
+ALTER TABLE `Books`
+DROP COLUMN `Books`.`authorId`; 
+
+2.
+//Pridadame vieną įrašą, jog matytume, kad pirma dalis veikia
+INSERT INTO `test`.`AuthorBook`
+(`authorId`, `bookId`)
+VALUES
+(2, 1);
+
+3.
+SELECT GROUP_CONCAT(`Authors`.`name`) AS `Author`, `Books`.`title` From `AuthorBook`
+INNER JOIN `Authors` ON `Authors`.`authorId` = `AuthorBook`.`authorId`
+INNER JOIN `Books` ON `Books`.`bookId` = `AuthorBook`.`bookId`
+GROUP BY `Books`.`title`
+
+4.
+ALTER TABLE `Books` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
