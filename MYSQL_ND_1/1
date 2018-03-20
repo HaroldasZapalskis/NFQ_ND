@@ -1,0 +1,3 @@
+1. SELECT * FROM `Books`
+2. SELECT `Books`.`title` FROM `Books` ORDER BY `Books`.`title` ASC
+3. SELECT `Books`.`authorId`, Count(*) AS `Suma` FROM `Books` GROUP BY `Books`.`authorId`
