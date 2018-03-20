@@ -13,7 +13,7 @@ DROP COLUMN `Books`.`authorId`;
 
 2.
 //Pridadame vieną įrašą, jog matytume, kad pirma dalis veikia
-INSERT INTO `test`.`AuthorBook`
+INSERT INTO `AuthorBook`
 (`authorId`, `bookId`)
 VALUES
 (2, 1);
