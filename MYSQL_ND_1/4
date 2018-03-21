@@ -4,4 +4,6 @@
     // Įtraukiant autorius kurie neturi knygų
     SELECT `Authors`.`name`, Count(CASE WHEN `Books`.`authorId` IS NOT NULL then 1 else NULL END) AS `Suma` FROM `Books` RIGHT JOIN `Authors` ON `Authors`.`authorId` = `Books`.`authorId` GROUP BY `Authors`.`name`
 
-2.  DELETE FROM `Books` WHERE `Books`.`authorId` IS NULL
+2.  DELETE `Authors` FROM `Authors`
+    LEFT JOIN `Books` ON `Books`.`authorId` = `Authors`.`authorId`
+    WHERE `Books`.`authorId` IS NULL
